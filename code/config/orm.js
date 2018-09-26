@@ -44,12 +44,22 @@ const orm = {
             cb(data)
         });
     },
-    updateOne: function (id, cb) {
-        var queryString = 'UPDATE burgers SET devoured = true WHERE id = ?';
-        connection.query(queryString, [id], function (err, data) {
-            if (err) throw err
-            cb(data)
-        })
+    update: function (table, objColVals, condition, cb) {
+        var queryString = "UPDATE " + table;
+
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+
+        console.log(queryString);
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
     }
 
 
