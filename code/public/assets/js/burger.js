@@ -1,5 +1,5 @@
 $(function () {
-    $('.change-devoured').on('click', event => {
+    $('.change-devoured').on('click', function(event) {
 
         var id = $(this).data("id");
         console.log(id)
@@ -11,15 +11,14 @@ $(function () {
         var isEaten = {
             eat: eatburger
         }
-
-        /* $.ajax({
+        $.ajax({
             url: "/api/burger/" + id,
             type: "PUT",
             data: isEaten
         }).then(function () {
             console.log('changed burger', isEaten);
             location.reload()
-        }) */
+        })
     })
 
     //Add a burger\\
