@@ -43,9 +43,14 @@ const orm = {
             if (err) throw err
             cb(data)
         });
-
     },
-    // An example of objColVals would be {name: panther, sleepy: true}
+    updateOne: function (id, cb) {
+        var queryString = 'UPDATE burgers SET devoured = true WHERE id = ?';
+        connection.query(queryString, [id], function (err, data) {
+            if (err) throw err
+            cb(data)
+        })
+    }
 
 
 };
