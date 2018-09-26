@@ -11,10 +11,11 @@ const burger = {
             cb(res)
         })
     },
-
-
-
-
+    updateOne: function (id, cb) {
+        orm.updateOne([id], result => {
+            cb(result)
+        })
+    }
 
 };
 
