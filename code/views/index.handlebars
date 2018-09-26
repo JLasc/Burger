@@ -1,0 +1,54 @@
+<div class='center'>
+    <img class='img-size' src='burgerboard.gif' />
+    <h3 class="title-align"> Eat-Da-Burger </h3>
+</div>
+
+<div class="row">
+
+    <div class='col s6 center'>
+        <h5>Burgers Available to Eat:</h5>
+        <ul>
+            {{#each burger}} {{#unless this.devoured}}
+            <li>
+                {{this.id}}. {{this.burger_name}}
+
+                <form action="/api/burger/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="false">
+                    <button class="btn btn-warning" type="submit">Eat Me!</button>
+                </form>
+
+            </li>
+            {{/unless}} {{/each}}
+        </ul>
+    </div>
+
+    <div class="col s6 center">
+        <h5>Burgers Eaten:</h5>
+        <div class="devouredBurger">
+            <ul>
+                {{#each burger }}
+                {{#if devoured}}
+                {{> burger/burger-block}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+
+</div> {{!-- This is the end of the row --}}
+
+
+<div class="addBurger center">
+    <h2>Add a burger</h2>
+    <form class="create-form">
+        <div class="row center">
+            <div class="input-field col s12">
+                <textarea id="burger_name" class="materialize-textarea"></textarea>
+                <label for="burger_name">Enter a Burger</label>
+            </div>
+            <button id='submit-btn' class='waves-effect waves-light btn-large blue' type='submit'>Submit</button>
+        </div>
+        <p class='center'>Enter a burger you want to eat then Click the "Submit" button</p>
+    </form>
+</div>
