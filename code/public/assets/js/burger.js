@@ -22,20 +22,5 @@ $(function () {
     })
 
 
-    //Devour a burger\\
-    $('.change-devoured').on("click", event => {
-        let id = $(this).data('id');
-
-
-        $.ajax({
-            url: "/api/burger/" + id,
-            type: "PUT",
-        }).then(function () {
-            console.log('Updated')
-        })
-
-
-    });
-
 
 });
