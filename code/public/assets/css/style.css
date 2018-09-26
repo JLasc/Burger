@@ -1,0 +1,13 @@
+body {
+    background-color: #CBDBBA;
+}
+
+.img-size {
+    width: 350px;
+    height: 350px;
+}
+
+.title-align {
+    margin-top: 0px;
+    margin-bottom: 5rem;
+}
