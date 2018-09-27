@@ -1,5 +1,9 @@
 body {
-    background-color: #CBDBBA;
+    background-color: black;
+}
+
+div.container.main {
+    background-color: rgb(237, 222, 215, .7);
 }
 
 .img-size {
@@ -7,7 +11,35 @@ body {
     height: 350px;
 }
 
-.title-align {
-    margin-top: 0px;
-    margin-bottom: 5rem;
+a.waves-effect {
+    background-color: #EA5B0C;
+}
+
+div.card-image {
+    margin-bottom: 0px;
+    background-color: black;
+}
+
+div.card-content {
+    background-color: black;
+}
+
+
+div.left-div li,
+div.right-div li {
+    margin-top: 10px;
+    width: 100%;
+    color: #EA5B0C;
+    font-size: 24px;
+}
+
+
+div.left-div,
+div.right-div {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #EA5B0C;
+}
+
+div.row h5 {
+    color: white;
 }
