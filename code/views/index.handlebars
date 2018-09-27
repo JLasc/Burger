@@ -1,52 +1,67 @@
-<div class='center'>
-    <img class='img-size' src='burgerboard.gif' />
-    <h3 class="title-align"> Eat-Da-Burger </h3>
-</div>
-
 <div class="row">
-    <div class="col s6 center">
-        <h5>Burgers to Eat:</h5>
-        <div class="devouredBurger">
-            <ul>
-                {{#each burger}}
-                {{id}}. {{burger_name}}
-                {{#unless devoured}}
-                {{> burger/burger-block}}
-                {{/unless}}
-                {{/each}}
-            </ul>
-        </div>
-    </div>
-
-
-    <div class='col s6 center'>
-        <h5>Burgers Eaten:</h5>
-        <ul>
-            {{#each burger}}
-            {{#if devoured}}
-            {{> burger/burger-block}}
-            {{/if}}
-            {{/each}}
-
-        </ul>
-    </div>
-
-
-
-
-</div> {{!-- This is the end of the row --}}
-
-
-<div class="addBurger center">
-    <h2>Add a burger</h2>
-    <form class="create-form">
-        <div class="row center">
-            <div class="input-field col s12">
-                <textarea id="burger_name" class="materialize-textarea"></textarea>
-                <label for="burger_name">Enter a Burger</label>
+    <div class="col s8 offset-s2 z-depth-5 z-depth-5">
+        <div class="card z-depth-5">
+            <div class="card-image">
+                <img src="burger.png">
             </div>
-            <button id='submit-btn' class='waves-effect waves-light btn-large blue' type='submit'>Submit</button>
+            <div class="card-content">
+                <div class="row ">
+                    <div class="left-div col s6 center">
+                        <h5>Burgers to Eat:</h5>
+                        <div class="devouredBurger">
+                            <ul>
+                                {{#each burger}}
+                                {{#unless devoured}}
+                                {{> burger/burger-block}}
+                                {{/unless}}
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class='right-div col s6 center'>
+                        <h5>Burgers Eaten:</h5>
+                        <ul>
+                            {{#each burger}}
+                            {{#if devoured}}
+                            {{> burger/burger-block}}
+                            {{/if}}
+                            {{/each}}
+
+                        </ul>
+                    </div>
+
+                </div> {{!-- This is the end of the row --}}
+
+                <!-- Modal Structure -->
+                <div class="center">
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Burger</a>
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Create a Burger</h4>
+                            <p>
+                                <form class="create-form">
+                                    <div class="row center">
+                                        <div class="input-field col s12">
+                                            <textarea id="burger_name" class="materialize-textarea mt-3"></textarea>
+                                            <label for="burger_name">Enter a Burger</label>
+                                        </div>
+                                    </div>
+                                    <p class='center'>Enter a burger you want to eat then Click the "Submit" button</p>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button id='submit-btn' class='waves-effect waves-light btn blue' type='submit'>Submit</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+            </div>
         </div>
-        <p class='center'>Enter a burger you want to eat then Click the "Submit" button</p>
-    </form>
+    </div>
 </div>
