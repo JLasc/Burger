@@ -1,5 +1,6 @@
 $(function () {
-    $('.change-devoured').on('click', function(event) {
+    $('.modal').modal();
+    $('.change-devoured').on('click', function (event) {
 
         var id = $(this).data("id");
         console.log(id)
