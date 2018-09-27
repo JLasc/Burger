@@ -1,5 +1,13 @@
 <li>
-    <button class="change-devoured waves-effect waves-light btn" data-id="{{id}}">
-        Devour
-    </button>
+
+    {{#if devoured}}
+    <a class="change-devoured waves-effect waves-light btn-small disabled" data-id="{{id}}">
+        {{burger_name}}
+    </a>
+    {{else}}
+    <a class="change-devoured waves-effect waves-light btn-small" data-id="{{id}}">
+        {{burger_name}}
+    </a>
+    {{/if}}
+
 </li>
