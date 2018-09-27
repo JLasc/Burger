@@ -10,7 +10,7 @@ Clone the repo `git@github.com:JLasc/Burger.git` to your desktop.
 
 Run the `npm install` command in your terminal of choice. 
 
-Navigate to the `/db` folder, and Source the `schema.sql` and `seeds.sql` files to your SQL GUI of choice.
+Navigate to the `/db` folder, and source the `schema.sql` and `seeds.sql` files to your SQL GUI of choice.
 
 Update the `connection.js` file in the `config` folder to match your SQL setup, inputting your `user` and `password`
 
