@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 const exphbs = require('express-handlebars');
 
 
-const port = process.env.port || 8080;
+const PORT = process.env.PORT || 8080;
 
 
 app.engine("handlebars", exphbs({
@@ -28,7 +28,7 @@ const routes = require('./controller/burgers_controller');
 app.use(routes);
 
 
-app.listen(port, function (err) {
+app.listen(PORT, function (err) {
     if (err) throw err
-    console.log(`You are now connected to your server on port ${port}`)
+    console.log(`You are now connected to your server on PORT ${PORT}`)
 })
